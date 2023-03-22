@@ -43,10 +43,13 @@ function onFormSubmit(event) {
   //1.3.
   const formData = new FormData(event.currentTarget);
   // console.log(formData);
-  //1.4.
-  const { email, password } = event.currentTarget.elements;
+  //1.4. (записи рівноцінні)
+  // const { email, password } = event.currentTarget.elements;
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
   // 1.5. + 1.3.1
-  if (email.value || password.value) {
+  if (!email.value || !password.value) {
     return alert("НУ! І чого б оце не заповнити всі поля 🙄");
   } else {
     formData.forEach((value, name) => {

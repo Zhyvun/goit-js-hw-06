@@ -12,24 +12,31 @@ const result = document.getElementById("name-output");
 // console.log(insert);
 // console.log(result);
 
+//! trim() видаляє пробіли та символи з початку та кінця строки)
+
 //* -------- Вар 1 ---------
 
 // insert.addEventListener("input", newInput);
 // function newInput(event) {
-//   return (result.textContent = event.currentTarget.value)
+//   return (result.textContent = event.currentTarget.value.trim())
 //     ? null
 //     : (result.textContent = "Anonymous");
 // }
 
-//* -------- Вар 2 (з урахуванням методу  - trim() видаляє пробіли та символи з початку та кінця строки) ---------
-//! -------- Але не зрозумів нахіба ? --------
+//* -------- Вар 2 (з урахуванням методу  -  ---------
 
 insert.addEventListener("input", newInput);
 function newInput(event) {
-  return (result.textContent = event.currentTarget.value)
+  return (result.textContent = event.currentTarget.value.trim())
     ? event.currentTarget.value.trim() !== ""
     : (result.textContent = "Anonymous");
 }
+
+//*-------- Вар 3  (сурер короткий запис)---------
+
+// insert.addEventListener("input", (event) => {
+//   result.textContent = event.currentTarget.value.trim() || "Anonymous";
+// });
 
 // dy Vira:
 // const refs = {

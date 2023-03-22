@@ -28,14 +28,20 @@ const body = document.body;
 // console.dir(body);
 
 //*--------Вар 1 ----------
-const changeColor = () => {
-  bgnColor.textContent = getRandomHexColor();
-  body.style.backgroundColor = bgnColor.textContent;
-};
+// const changeColor = () => {
+//   bgnColor.textContent = getRandomHexColor();
+//   body.style.backgroundColor = bgnColor.textContent;
+// };
 
 //*--------Вар 2 (трішки скорочений запис)----------
 // const changeColor = () => {
 //   bgnColor.textContent = body.style.backgroundColor = getRandomHexColor();
 // };
 
-changeBgnColor.addEventListener("click", changeColor);
+// changeBgnColor.addEventListener("click", changeColor);
+
+//*--------Вар 3 (УАПШЕ все в одне злив 🙂)----------
+
+changeBgnColor.addEventListener("click", () => {
+  bgnColor.textContent = body.style.backgroundColor = getRandomHexColor();
+});

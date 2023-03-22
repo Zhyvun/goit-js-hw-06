@@ -10,16 +10,21 @@
 const fontRef = document.getElementById("font-size-control");
 const textRef = document.getElementById("text");
 
+/*.... при пешому завантаженні сторінки відразу додаємо розмір у наш fontSize, 
+а вже потім при настанні події змінюємо*/
+
+textRef.style.fontSize = fontRef.value + "px";
+
 // *-------Варіант 1 ----------
 
-// function changeFontRef(event) {
-//   textRef.style.fontSize = event.currentTarget.value + "px";
-// }
+function changeFontRef(event) {
+  textRef.style.fontSize = event.currentTarget.value + "px";
+}
 
 // *-------Варіант 2 ----------
 
-const changeFontRef = ({ currentTarget }) =>
-  (textRef.style.fontSize = `${currentTarget.value}px`);
+// const changeFontRef = ({ currentTarget }) =>
+//   (textRef.style.fontSize = `${currentTarget.value}px`);
 
 fontRef.addEventListener("input", changeFontRef);
 
